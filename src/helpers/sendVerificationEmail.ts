@@ -16,6 +16,7 @@ export async function sendVerificationEmail({
     });
 
     console.log(data);
+    console.log(error);
 
     if (error) {
       return { success: false, message: error.message };

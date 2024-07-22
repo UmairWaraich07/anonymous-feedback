@@ -8,7 +8,10 @@ export async function POST(request: Request) {
   try {
     const { username, email, password } = await request.json();
 
-    const existingUserByUsername = await UserModel.findOne({ username });
+    const existingUserByUsername = await UserModel.findOne({
+      username,
+      isVerified: true,
+    });
 
     if (existingUserByUsername) {
       return Response.json(
@@ -72,6 +75,8 @@ export async function POST(request: Request) {
       username,
       verificationCode: verifyCode,
     });
+
+    console.log(emailResponse);
 
     if (!emailResponse.success) {
       return Response.json(
