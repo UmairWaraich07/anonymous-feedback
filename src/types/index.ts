@@ -1,4 +1,4 @@
-import { Message } from "@/models/user.mode.";
+import { Message } from "@/models/user.model";
 
 export interface IVerificationEmail {
   verificationCode: string;
