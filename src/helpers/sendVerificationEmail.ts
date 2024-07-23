@@ -15,9 +15,6 @@ export async function sendVerificationEmail({
       react: VerificationEmail({ verificationCode, username }),
     });
 
-    console.log(data);
-    console.log(error);
-
     if (error) {
       return { success: false, message: error.message };
     }

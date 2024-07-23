@@ -1,7 +1,6 @@
 import { connectDB } from "@/lib/connectDB";
 import UserModel from "@/models/user.model";
 import { verifySchema } from "@/schemas/verifySchema";
-import z from "zod";
 
 export async function POST(request: Request) {
   await connectDB();
